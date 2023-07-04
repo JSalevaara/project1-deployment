@@ -24,6 +24,8 @@ const handleRequest = async (request) => {
     return await itemController.collectItem(request);
   } else if (url.pathname === "/") {
     return await statisticsController.showStats()
+  } else if (url.pathname === "/test") { 
+    return new Response("Hello world!");
   } else {
     return new Response("Not found", { status: 404 });
   }

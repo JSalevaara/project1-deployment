@@ -6,7 +6,7 @@
     <ul>
     <% it.items.forEach((item) => {%>
     <% if (!item.collected) {%>
-        <li><%= item.name%></li>
+        <li data-testid="item"><%= item.name%></li>
             <form action="/lists/<%= it.list[0].id%>/items/<%=item.id%>/collect" method="POST">
                 <input type="submit" value="Mark collected!">
             </form>
@@ -23,8 +23,8 @@
 <h3> Add items to shopping list </h3>
 
 <form action="/lists/<%= it.list[0].id%>/items" method="POST">
-    <label for="name"> Name: </label>
-    <input type="text" name="name"/>
+    <label for="name"> Name: 
+    <input type="text" name="name"/></label>
     <input type="Submit" value="Add item"/>
 </form>
 

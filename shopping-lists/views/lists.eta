@@ -4,17 +4,18 @@
 
 <form method="POST">
     Name: <input type="text" name="name"/>
-    <input type="Submit" value="Add list!"/>
+    <input id="add" type="Submit" value="Add list!"/>
 </form>
 
-<h2>Current shopping lists</h2>
+<h3>Current shopping lists</h3>
 
-<ul>
+
+<ul data-testid="lists">
 <% it.lists.forEach((list) => { %>
     <li>
-        <a href="/lists/<%= list.id%>"> <%= list.name%></a>
+        <a data-testid="list" href="/lists/<%= list.id%>"> <%= list.name%></a>
         <form action="/lists/<%= list.id%>/deactivate" method="POST">
-            <input type="submit" value="Deactivate list!">
+            <input id="deactivate" type="submit" value="Deactivate list!">
         </form>
     </li>
 <% });%>
