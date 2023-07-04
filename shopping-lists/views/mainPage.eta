@@ -1,0 +1,15 @@
+<%layout("./layouts/layout.eta")%>
+<h1>Statistics</h1>
+<% if (it.listCount) { %>
+<p>Amount of active lists: <%= it.listCount %> </p>
+    <%if (it.itemCount != undefined) { %>
+        <p>Amount of items in lists: <%= it.itemCount%>
+    <% } else { %>
+        <p> Amount of items in lists: 0</p>
+    <%}%>
+<% } else { %>
+<p>No shopping lists yet.</p>
+<% } %>
+</br>
+</br>
+<a href="/lists"> Lists </a>
